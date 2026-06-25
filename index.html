@@ -498,7 +498,7 @@ h2.section-title{font-size:clamp(28px,4.2vw,46px);font-weight:700;letter-spacing
     <div class="foot">
       <div class="wrap" style="padding:0">
         <div class="row">
-          <a href="#top" class="brand"><span class="mono">MA</span> Michelle Anderson</a>
+          <a href="#top" class="brand"><span class="mono">MA</span> Michelle Anderson - michelle1010@proton.me</a>
           <div class="links">
             <a href="https://github.com/michelle01022012" target="_blank" rel="noopener">GitHub</a>
             <a href="https://www.linkedin.com/in/michelleanderson10" target="_blank" rel="noopener">LinkedIn</a>
@@ -547,13 +547,62 @@ addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passi
 /* ---- projects ---- */
 (function(){
   const projects=[
-    {name:'E-Commerce',desc:'A responsive storefront with product grid, cart interactions and a clean checkout flow.',tags:['HTML','CSS','JavaScript'],c:'#7C3AED',layout:'shop'},
-    {name:'E-Portfolio',desc:'My personal portfolio site — semantic markup, smooth scrolling and a tidy component structure.',tags:['HTML','CSS','JS'],c:'#EC4899',layout:'folio'},
-    {name:'Final-Project',desc:'A multi-section landing experience built as a capstone, focused on layout and motion.',tags:['HTML','CSS'],c:'#0ea5e9',layout:'hero'},
-    {name:'Mini-Project 2.0',desc:'An iterative rebuild emphasizing reusable UI patterns and responsive breakpoints.',tags:['HTML','CSS'],c:'#22c55e',layout:'cards'},
-    {name:'Mini-Project Two',desc:'Interactive component practice — forms, validation and stateful UI in vanilla JS.',tags:['HTML','JS'],c:'#f59e0b','fg':'#000',layout:'form'},
-    {name:'FirstProject',desc:'Where it started: hand-coded fundamentals in structure, styling and the box model.',tags:['HTML','CSS'],c:'#6366f1',layout:'hero'}
-  ];
+  {
+    name:'E-Commerce',
+    desc:'A responsive storefront with product grid, cart interactions and a clean checkout flow.',
+    tags:['HTML','CSS','JavaScript'],
+    c:'#7C3AED',
+    layout:'shop',
+    code:'https://github.com/michelle01022012/E-Commerce',
+    demo:'https://michelle01022012.github.io/E-Commerce/'
+  },
+  {
+    name:'E-Portfolio',
+    desc:'My personal portfolio site — semantic markup, smooth scrolling and a tidy component structure.',
+    tags:['HTML','CSS','JS'],
+    c:'#EC4899',
+    layout:'folio',
+    code:'https://github.com/michelle01022012/E-Portfolio-Project',
+    demo:'https://michelle01022012.github.io/E-Portfolio-Project/'
+  },
+  {
+    name:'Final-Project',
+    desc:'A multi-section landing experience built as a capstone, focused on layout and motion.',
+    tags:['HTML','CSS'],
+    c:'#0ea5e9',
+    layout:'hero',
+    code:'https://github.com/michelle01022012/Final-Project',
+    demo:'https://michelle01022012.github.io/Final-Project/'
+  },
+  {
+    name:'Mini-Project 2.0',
+    desc:'An iterative rebuild emphasizing reusable UI patterns and responsive breakpoints.',
+    tags:['HTML','CSS'],
+    c:'#22c55e',
+    layout:'cards',
+    code:'https://github.com/michelle01022012/Mini-Project-2.0',
+    demo:'https://michelle01022012.github.io/Mini-Project-2.0/'
+  },
+  {
+    name:'Mini-Project Two',
+    desc:'Interactive component practice — forms, validation and stateful UI in vanilla JS.',
+    tags:['HTML','JS'],
+    c:'#f59e0b',
+    fg:'#000',
+    layout:'form',
+    code:'https://github.com/michelle01022012/Mini-Project-Two',
+    demo:'https://michelle01022012.github.io/Mini-Project-Two/'
+  },
+  {
+    name:'FirstProject',
+    desc:'Where it started: hand-coded fundamentals in structure, styling and the box model.',
+    tags:['HTML','CSS'],
+    c:'#6366f1',
+    layout:'hero',
+    code:'https://github.com/michelle01022012/FirstProject',
+    demo:'https://michelle01022012.github.io/FirstProject/'
+  }
+];
   const previews={
     hero:c=>`<div class="bbody"><div class="bline" style="width:55%"></div><div class="bline" style="width:80%"></div><div class="bblock" style="background:${c};width:38%"></div></div>`,
     shop:c=>`<div class="bbody" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;padding:13px"><div class="bblock" style="margin:0;background:${c}1f;height:48px"></div><div class="bblock" style="margin:0;background:${c}1f;height:48px"></div><div class="bblock" style="margin:0;background:${c}1f;height:48px"></div><div class="bblock" style="margin:0;background:${c};height:14px;border-radius:6px"></div><div class="bblock" style="margin:0;background:${c}33;height:14px;border-radius:6px"></div><div class="bblock" style="margin:0;background:${c}33;height:14px;border-radius:6px"></div></div>`,
@@ -573,8 +622,9 @@ addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passi
         <p>${p.desc}</p>
         <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
         <div class="card-links">
-          <a href="https://github.com/michelle01022012" target="_blank" rel="noopener">${gh} Code</a>
-          <a href="#" target="_blank" rel="noopener">${icon} Live demo</a>
+          <a href="${p.code}" target="_blank" rel="noopener">${gh} Code</a>
+
+          <a href="${p.demo}" target="_blank" rel="noopener">${icon} Live demo</a>
         </div>
       </div>
     </article>`).join('');
